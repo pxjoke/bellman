@@ -119,7 +119,7 @@ class Bellman {
                             {
                                 type: 'arrow',
                                 direction: 'up',
-                                active: up.edge.active,
+                                modifier: (up.edge.active && 'active') || (up.edge.selected && 'selected') || 'regular',
                                 value: up.edge.weight
                             }
                         );
@@ -129,7 +129,7 @@ class Bellman {
                             {
                                 type: 'arrow',
                                 direction: 'right',
-                                active: right.edge.active,
+                                modifier: (right.edge.active && 'active') || (right.edge.selected && 'selected') || 'regular',
                                 value: right.edge.weight
                             }
                         );
@@ -149,6 +149,8 @@ class Bellman {
                     });
                 }
             }
-        return rows.reverse();
+        return {
+           rows: rows.reverse()
+        };
     }
 }

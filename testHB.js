@@ -5,6 +5,8 @@ Handlebars.registerHelper('if_eq', function (a, b, opts) {
         return opts.inverse(this);
 });
 
+
+
 let struct = {
     rows: [
         {
@@ -61,5 +63,5 @@ let struct = {
 let templateHTML = $('#grid-template').html();
 
 let template = Handlebars.compile(templateHTML);
-
-$('.wrapper').append(template(struct));
+console.log(viewData);
+$('.wrapper').append(template(viewData));

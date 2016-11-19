@@ -55,6 +55,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            position: relative;
         }
 
         .bubble {
@@ -83,6 +84,19 @@
 
         .arrow_active {}
 
+        .arrow__text {
+            position: absolute;
+            opacity: 0.5;
+        }
+
+        .arrow__text_up {
+            left: 10px;
+        }
+
+         .arrow__text_right {
+            top: 10px;
+        }
+
     </style>
 </head>
 
@@ -104,7 +118,8 @@
                         </div>
                     </div>
                     {{/if_eq}} {{#if_eq type 'arrow'}}
-                    <img src="{{#if active}} arrow-active.svg {{else}} arrow.svg{{/if}} " class="arrow arrow_{{direction}}"> {{/if_eq}}
+                    <div class="arrow__text arrow__text_{{direction}}">{{value}}</div>
+                    <img src="arrow-{{modifier}}.svg " class="arrow arrow_{{direction}}"> {{/if_eq}}
                 </div>
                 {{/each}}
             </div>
