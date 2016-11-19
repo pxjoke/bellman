@@ -97,4 +97,58 @@ class Bellman {
             this.findDirection(node.right.node);
         }
     }
+
+    getViewData() {
+        let rows = [],
+            rowHead = this.grid.nodes[0][0];
+            while(rowHead) {
+                let bubbleRow = [],
+                    arrowRow = [],
+                    current = rowHead;
+                while(current) {
+                    let up = current.up;
+                    let right = current.right;
+                    bubbleRow.push(
+                        {
+                            type: 'bubble',
+                            value: current.value
+                        }
+                    );
+                    if (up) {
+                        arrowRow.push(
+                            {
+                                type: 'arrow',
+                                direction: 'up',
+                                active: up.edge.active,
+                                value: up.edge.weight
+                            }
+                        );
+                    }
+                    if (right) {
+                        bubbleRow.push(
+                            {
+                                type: 'arrow',
+                                direction: 'right',
+                                active: right.edge.active,
+                                value: right.edge.weight
+                            }
+                        );
+                        if (up) {
+                            arrowRow.push({type: ''});
+                        }
+                    }
+                    current = right && right.node;
+                }
+                rowHead = rowHead.up && rowHead.up.node;
+                rows.push({
+                    cells: bubbleRow
+                });
+                if (arrowRow.length) {
+                    rows.push({
+                        cells: arrowRow
+                    });
+                }
+            }
+        return rows.reverse();
+    }
 }
