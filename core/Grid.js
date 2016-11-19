@@ -17,10 +17,16 @@ class Grid {
     }
 
     eachNode(callback) {
-        for (let i = 0; i < rows; i++) {
-            for (let j = 0; j < columns; j++) {
+        for (let i = 0; i < this.rows; i++) {
+            for (let j = 0; j < this.columns; j++) {
                 callback(this.nodes[i][j], i, j, this.nodes);
             }
+        }
+    }
+
+    eachDiagNode(callback) {
+        for(let i = rows - 1, j = columns - 1; i >= 0 && j >= 0; i--, j--) {
+            callback(this.nodes[i][j], i, j, this.nodes);
         }
     }
 }
