@@ -53,6 +53,6 @@
     </linearGradient>
     <linearGradient id="linearGradient578" xlink:href="#linearGradient575"/>
   </defs>
-  <path d="M 54.721993,31.208662 L 3.6173688,31.208662" id="path831" sodipodi:stroke-cmyk="(0.0000000 0.0000000 0.0000000 0.80000001)" style="fill:none;fill-rule:evenodd;stroke:#333333;stroke-opacity:1.0000000;stroke-width:3.0000000;stroke-linejoin:round;stroke-linecap:round;fill-opacity:0.75;stroke-dasharray:none;"/>
-  <path d="M 43.223908,21.591740 L 56.143112,30.872990 L 43.532558,41.185490" id="path869" sodipodi:nodetypes="ccc" sodipodi:stroke-cmyk="(0.0000000 0.0000000 0.0000000 0.80000001)" style="fill:none;fill-rule:evenodd;stroke:#333333;stroke-width:3.0000000;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1.0000000;fill-opacity:1.0000000;stroke-dasharray:none;"/>
+  <path d="M 54.721993,31.208662 L 3.6173688,31.208662" id="path831" sodipodi:stroke-cmyk="(0.0000000 0.0000000 0.0000000 0.80000001)" style="fill:none;fill-rule:evenodd;stroke:#FF3F80;stroke-opacity:1.0000000;stroke-width:3.0000000;stroke-linejoin:round;stroke-linecap:round;fill-opacity:0.75;stroke-dasharray:none;"/>
+  <path d="M 43.223908,21.591740 L 56.143112,30.872990 L 43.532558,41.185490" id="path869" sodipodi:nodetypes="ccc" sodipodi:stroke-cmyk="(0.0000000 0.0000000 0.0000000 0.80000001)" style="fill:none;fill-rule:evenodd;stroke:#FF3F80;stroke-width:3.0000000;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1.0000000;fill-opacity:1.0000000;stroke-dasharray:none;"/>
 </svg>

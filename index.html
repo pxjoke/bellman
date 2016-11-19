@@ -4,7 +4,10 @@
     <title>
         Belman
     </title>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.amd.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js"></script>
 
     <script type="text/javascript" src="core/Node.js"></script>
     <script type="text/javascript" src="core/Grid.js"></script>
@@ -14,6 +17,27 @@
     <script type="text/javascript" src="index.js"></script>
 
     <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: black;
+            color: #fff;
+        }
+
+        .wrapper {
+            padding-top: 20px;
+            padding-bottom: 20px;
+            background-color: #000000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .page-title {
+
+            opacity: 0.7
+        }
+
         .grid {
             display: flex;
             flex-direction: column;
@@ -24,9 +48,9 @@
         }
 
         .grid__cell {
-            border: 1px solid cadetblue;
-            width: 100px;
-            height: 100px;
+            /*            border: 1px solid cadetblue;*/
+            width: 70px;
+            height: 70px;
             margin: 2px;
             display: flex;
             justify-content: center;
@@ -34,63 +58,60 @@
         }
 
         .bubble {
-            border-radius: 100px;
+            background-color: #3e50b4;
+            border-radius: 50%;
             width: 95%;
             height: 95%;
-            background-color: darkslateblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        .arrow-up {
+        .bubble__text {
+            color: #fff;
+        }
+
+        .arrow {
             width: 95%;
+        }
+
+        .arrow_up {
             transform: rotate(-90deg);
         }
 
-        .arrow-right {
-            width: 95%;
-        }
+        .arrow_right {}
+
+        .arrow_active {}
 
     </style>
 </head>
 
 <body>
-
-    <div class="grid">
-        <div class="grid__row">
-            <div class="grid__cell">
-                <div class="bubble"></div>
-            </div>
-            <div class="grid__cell">
-                <img src="Arrow_right.svg" class="arrow-right" alt="">
-            </div>
-            <div class="grid__cell">
-                <div class="bubble"></div>
-            </div>
-
-        </div>
-        <div class="grid__row">
-            <div class="grid__cell">
-                <img src="Arrow_right.svg" class="arrow-up" alt="">
-            </div>
-            <div class="grid__cell"></div>
-            <div class="grid__cell">
-                <img src="Arrow_right.svg" class="arrow-up" alt="">
-            </div>
-        </div>
-        <div class="grid__row">
-            <div class="grid__cell">
-                <div class="bubble"></div>
-            </div>
-            <div class="grid__cell">
-                <img src="Arrow_right.svg" class="arrow-right" alt="">
-            </div>
-            <div class="grid__cell">
-                <div class="bubble"></div>
-            </div>
-        </div>
-
+    <h1 class="page-title">Bellman method</h1>
+    <div class="wrapper">
 
     </div>
-
+    <script id="grid-template" type="text/x-handlebars-template">
+        <div class="grid">
+            {{#each rows}}
+            <div class="grid__row">
+                {{#each cells}}
+                <div class="grid__cell">
+                    {{#if_eq type 'bubble'}}
+                    <div class="bubble">
+                        <div class="bubble__text">
+                            {{value}}
+                        </div>
+                    </div>
+                    {{/if_eq}} {{#if_eq type 'arrow'}}
+                    <img src="{{#if active}} arrow-active.svg {{else}} arrow.svg{{/if}} " class="arrow arrow_{{direction}}"> {{/if_eq}}
+                </div>
+                {{/each}}
+            </div>
+            {{/each}}
+        </div>
+    </script>
+    <script type=" text/javascript " src="testHB.js "></script>
 </body>
 
 </html>
