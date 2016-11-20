@@ -73,10 +73,12 @@ class Bellman {
             fromRight = right && (right.edge.weight + right.node.value) || Infinity;
 
         node.value = 0;
-        if (fromUp < fromRight) {
+        if (Number.isFinite(fromUp) && fromUp <= fromRight) {
             node.value = fromUp;
             up.edge.selected = true;
+            return;
         }
+
         if (fromRight < fromUp) {
             node.value = fromRight;
             right.edge.selected = true;
