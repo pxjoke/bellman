@@ -2,9 +2,10 @@
 
 <head>
     <title>
-        Belman
+        Bellman
     </title>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js"></script>
@@ -14,97 +15,46 @@
     <script type="text/javascript" src="core/Weights.js"></script>
     <script type="text/javascript" src="core/Bellman.js"></script>
 
-    <script type="text/javascript" src="index.js"></script>
-
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: black;
-            color: #fff;
-        }
-
-        .wrapper {
-            padding-top: 20px;
-            padding-bottom: 20px;
-            background-color: #000000;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-        }
-
-        .page-title {
-
-            opacity: 0.7
-        }
-
-        .grid {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .grid__row {
-            display: flex;
-        }
-
-        .grid__cell {
-            /*            border: 1px solid cadetblue;*/
-            width: 70px;
-            height: 70px;
-            margin: 2px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-        }
-
-        .bubble {
-            background-color: #3e50b4;
-            border-radius: 50%;
-            width: 95%;
-            height: 95%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .bubble__text {
-            color: #fff;
-        }
-
-        .arrow {
-            width: 95%;
-        }
-
-        .arrow_up {
-            transform: rotate(-90deg);
-        }
-
-        .arrow_right {}
-
-        .arrow_active {}
-
-        .arrow__text {
-            position: absolute;
-            opacity: 0.5;
-        }
-
-        .arrow__text_up {
-            left: 10px;
-        }
-
-         .arrow__text_right {
-            top: 10px;
-        }
-
-    </style>
 </head>
 
 <body>
     <h1 class="page-title">Bellman method</h1>
     <div class="wrapper">
 
+        <div class="sidebar">
+            <div class="input-area clearfix">
+                <h2 class="area-title">Input Data</h2>
+                <div class="input-group">
+                    <label for="gridRows" class="input-group__label">Number of rows</label>
+                    <input type="number" class="input-group__input" id="gridRows">
+                </div>
+
+                <div class="input-group">
+                    <label for="gridColumns" class="input-group__label">Number of columns</label>
+                    <input type="number" class="input-group__input" id="gridColumns">
+                </div>
+
+                <div class="input-group">
+                    <label for="weightsInput" class="input-group__label">Weights</label>
+                    <textarea rows="20" cols="22" class="input-group__input" id="weightsInput"></textarea>
+                </div>
+
+                <button id="runBtn" class="run-button">
+                    Run
+                </button>
+            </div>
+        </div>
+
+        <div class="content">
+
+            <div class="grid">
+
+            </div>
+        </div>
     </div>
+
+
+
     <script id="grid-template" type="text/x-handlebars-template">
         <div class="grid">
             {{#each rows}}
@@ -126,7 +76,7 @@
             {{/each}}
         </div>
     </script>
-    <script type=" text/javascript " src="testHB.js "></script>
+    <script type="text/javascript" src="index.js"></script>
 </body>
 
 </html>

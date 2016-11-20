@@ -25,7 +25,7 @@ class Grid {
     }
 
     eachDiagNode(callback) {
-        for(let i = rows - 1, j = columns - 1; i >= 0 && j >= 0; i--, j--) {
+        for(let i = this.rows - 1, j = this.columns - 1; i >= 0 && j >= 0; i--, j--) {
             callback(this.nodes[i][j], i, j, this.nodes);
         }
     }
